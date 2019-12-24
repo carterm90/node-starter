@@ -20,7 +20,7 @@ storeSchema.pre('save', function(next) {
     if (!this.isModified('name')) {
         return next() // skip it
     }
-    this.slug = slug(this.name)
+    this.slug = slugs(this.name)
     next()
 })
 
